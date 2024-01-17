@@ -1,0 +1,24 @@
+.wrapper {
+    position: absolute;
+    
+}
+
+.wrapper.TR {
+    top: 20px;
+    right: 20px;
+}
+
+.wrapper.TL {
+    top: 20px;
+    left: 20px;
+}
+
+.wrapper.BR {
+    bottom: 20px;
+    right: 20px;
+}
+
+.wrapper.BL {
+    bottom: 20px;
+    left: 20px;
+}
