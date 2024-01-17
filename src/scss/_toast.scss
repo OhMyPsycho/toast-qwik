@@ -1,0 +1,74 @@
+
+.toast {
+    background-color: var(--toast-color-light);
+    color: var(--toast-description-light);
+    padding: 14px;
+    border-radius: var(--toast-radius);
+    font-family: var(--hype-font-family);
+    box-shadow: 0px 0px 2px 0px #A59AA8;
+    transition: all ease-in-out 0.5s;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+
+
+    
+    //TODO: temporal
+    max-width: fit-content;
+    // position: absolute;
+    // bottom: 20px;
+    // left: 20px;
+
+    .toast-icon {
+        color: var(--toast-title-light);
+        stroke-width: 2px;
+    }
+
+    .toast-closeable {
+        cursor: pointer;
+    }
+
+    .toast-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        p {
+            font-size: var(--font-size);
+            color: var(--toast-title-light);
+            font-weight: 600;
+        }
+        span {
+            font-size: var(--font-size);
+        }
+    }
+
+    .toast-actions {
+        .button-action {
+            border: none;
+            border-radius: var(--toast-radius);
+            background: var(--toast-color-dark);
+            font-size: var(--font-size);
+            padding: 8px 10px;
+            color: var(--toast-color-light);
+            cursor: pointer;
+            transition: all ease-in-out 200ms;
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+}
+
+//animation fadeUp
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+// animation appear toast
+.toastAnimation {
+    animation: fadeUp 0.5s ease-in-out;
+}

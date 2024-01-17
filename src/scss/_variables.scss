@@ -1,0 +1,31 @@
+$tq-namespace: 'eden';
+$tq-mobile: 'only screen and (max-width : 480px)' !default;
+
+:root {
+    // --toast-color-dark: #18181b;
+    --toast-color-dark: #333333;
+    --toast-color-light: #fff;
+
+    --toast-text-light: #333333;
+    // --toast-text-light: #757575;
+    --toast-text-dark: #f5f5f5;
+    // --toast-text-dark: #fff;
+
+    --toast-title-light: #18181b;
+    --toast-title-dark: #fff;
+    --toast-description-light: #757575;
+    --toast-description-dark: #fff;
+
+    --toast-color-danger: #ef4444;
+    --toast-color-success: #22c55e;
+    --toast-color-info: #0284c7;
+    --toast-color-warning: #eab308;
+
+    --toast-padding: 14px;
+    --toast-radius: 4px;
+
+    --hype-font-family: 'Arial', sans-serif;
+    --font-size: 13px;
+
+    --hype-z-index: 9999;
+}

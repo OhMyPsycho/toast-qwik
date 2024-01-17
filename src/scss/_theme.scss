@@ -1,0 +1,10 @@
+.#{$tq-namespace}__toast {
+    &-theme--dark {
+        background: var(--toast-color-dark);
+        color: var(--toast-text-dark);
+    }
+    &-theme--light {
+        background: var(--toast-color-light);
+        color: var(--toast-text-light);
+    }
+}

@@ -10,6 +10,12 @@ $ yarn add toast-qwik
 $ bun install toast-qwik
 $ npm install toast-qwik 
 ```
+## Preview
+![Simple Toast](./images/1.png)
+![Title Toast](./images/2.png)
+![Success Toast](./images/3.png)
+![Action Toast](./images/4.png)
+
 
 ## setting
 _src/routes/layout.tsx_
@@ -19,11 +25,7 @@ import { ToastProvider } from "toast-qwik";
 
 export default component$(() => {
   return (
-    <ToastProvider config={{
-          position: 'TL',
-          duration: 5000,
-          items: []
-        }}>
+    <ToastProvider>
         <Slot />
     </ToastProvider>
     );
@@ -37,16 +39,33 @@ import { component$ } from "@builder.io/qwik";
 import { useToast } from "toast-qwik";
 
 export default component$(() => {
-  const toast = useToast();
+  const {toast} = useToast();
   return (
     <>
-      <button onClick$={() => toast.default('test toast')}>Test toast</button>
+      <button onClick$={() => {
+        toast({
+          title: "Awesome toast",
+          message: "Toast Qwik description",
+          closeable: true,
+        })
+      }}>
+        Test toast
+      </button>
     </>
   );
 });
 ```
+## Types
 
-## options
+```jsx
+toast({
+          title: "Awesome toast",
+          message: "Toast Qwik description",
+          type: "success", // "success" | "warning" | "default" | "danger" | "info"
+        })
+```
+
+<!-- ## options
 
 ```jsx
 toast.info(`Test of toast Qwik`) //blue
@@ -54,16 +73,19 @@ toast.warn(`Test of toast Qwik`) // yellow
 toast.success(`Test of toast Qwik`) // green
 toast.default(`Test of toast Qwik`) // dark
 toast.error(`Test of toast Qwik`) // red
-```
+``` -->
 
 ## actions
 
 ```jsx
-toast.info(`Test of toast Qwik`, {
-  closeable: true, 
+toast({
+  title: "Awesome toast",
+  message: "Toast Qwik description",
+  closeable: true,
   action: {
-      content: 'SHOW',
-      onAction: $(() => console.log('SHOW'))
-    }})
+    content: 'SHOW',
+    onAction: $(() => console.log('SHOW'))
+  }
+})
 ```
 
